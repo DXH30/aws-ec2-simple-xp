@@ -1,0 +1,17 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: EIPAssociation
+metadata:
+  labels:
+    testing.upbound.io/name: myvm-eip-assoc
+  name: myvm-eip-assoc
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    allocationIdSelector:
+      matchLabels:
+        testing.upbound.io/name: myvm-eip
+    instanceIdSelector:
+      matchLabels:
+        testing.upbound.io/name: myvm-instance
+    region: us-west-2

@@ -1,0 +1,12 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: EIP
+metadata:
+  labels:
+    testing.upbound.io/name: myvm-eip
+  name: myvm-eip
+spec:
+  forProvider:
+    region: us-west-2
+    vpc: true
+  providerConfigRef:
+    name: default

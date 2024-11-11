@@ -1,0 +1,14 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: NetworkInterface
+metadata:
+  name: myvm-nic
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    privateIps:
+      - 172.16.10.100
+    region: us-west-2
+    subnetIdSelector:
+      matchLabels:
+        testing.upbound.io/name: myvm-subnet

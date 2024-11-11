@@ -1,0 +1,14 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: VPC
+metadata:
+  labels:
+    testing.upbound.io/name: myvm-vpc
+  name: myvm-vpc
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    cidrBlock: 172.16.10.0/24
+    enableDnsHostnames: true
+    enableDnsSupport: true
+    region: us-west-2

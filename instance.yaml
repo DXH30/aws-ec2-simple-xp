@@ -1,0 +1,15 @@
+apiVersion: ec2.aws.upbound.io/v1beta2
+kind: Instance
+metadata:
+  name: myvm-instance
+spec:
+  providerConfigRef:
+    name: default
+  forProvider:
+    ami: ami-04dd23e62ed049936
+    instanceType: t2.micro
+    networkInterface:
+      - deviceIndex: 0
+        networkInterfaceIdRef:
+          name: myvm-nic
+    region: us-west-2
